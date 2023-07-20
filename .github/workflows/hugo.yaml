@@ -60,7 +60,7 @@ jobs:
             --gc \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
-            --config /hugo-site/config.toml
+            --config hugo-site/config.toml
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
