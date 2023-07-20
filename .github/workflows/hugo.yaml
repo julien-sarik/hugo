@@ -59,7 +59,8 @@ jobs:
           hugo \
             --gc \
             --minify \
-            --baseURL "https://github.com/julien-sarik/hugo/tree/main/hugo-site/"          
+            --baseURL "${{ steps.pages.outputs.base_url }}/"
+            --source hugo-site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
