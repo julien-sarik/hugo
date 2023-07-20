@@ -22,3 +22,5 @@ Alternatively you can copy a file from the template in the `content` directory.
 ### run a local Hugo server
 From the Hugo site directory:
 `podman run --rm -it -v $(pwd):/src -p 1313:1313 docker.io/klakegg/hugo:0.111.3-ext-alpine server --buildDrafts`
+## integration with Github
+https://gohugo.io/hosting-and-deployment/hosting-on-github/
