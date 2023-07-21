@@ -33,7 +33,6 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./hugo-site
     env:
       HUGO_VERSION: 0.115.1
     steps:
@@ -55,6 +54,7 @@ jobs:
         uses: actions/configure-pages@v3
       - name: Install Node.js dependencies
         run: "sudo npm install -g postcss-cli autoprefixer"
+        working-directory: ./hugo-site
       - name: Build with Hugo
         env:
           # For maximum backward compatibility with Hugo modules
@@ -65,6 +65,7 @@ jobs:
             --gc \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
+        working-directory: ./hugo-site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
