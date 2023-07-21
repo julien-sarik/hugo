@@ -50,8 +50,10 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v3
-      - name: Install Node.js dependencies
-        run: "sudo npm install -g postcss-cli autoprefixer"
+      - name: Install Node.js global dependencies
+        run: "sudo npm install -g postcss-cli"
+      - name: Install Node.js local dependencies
+        run: "sudo npm install autoprefixer"
         working-directory: ./hugo-site
       - name: Build with Hugo
         env:
